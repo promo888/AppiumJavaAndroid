@@ -52,8 +52,9 @@ public class YouTubeTest {
         testUtils = new TestUtils();
         //PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        testUtils.killApp(driver, APP_PACKAGE);
-        driver.launchApp();
+        //testUtils.killApp(driver, APP_PACKAGE);
+        //driver.launchApp();
+        driver.resetApp();
     }
 
     @Test
@@ -65,6 +66,7 @@ public class YouTubeTest {
         //wait.until(ExpectedConditions.visibilityOfElementLocated(youtubeAppIconBy)).click();
         //driver.findElement(By.id("android:id/aerr_wait")).click();
 
+        //driver.resetApp();
 
         //wait.until(ExpectedConditions.visibilityOfElementLocated(youtubeAppIconBy));
         MobileElement el = (MobileElement) driver.findElementByAccessibilityId("YouTube");
