@@ -1,0 +1,40 @@
+use appium 1.20
+use cold boot emulators
+add/trust pom as maven project
+add https://repo.maven.apache.org/maven2
+
+ adb -s emulator-5554 logcat|grep -i android.intent.action.MAIN
+ 12-14 17:26:25.943   504  6135 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000000 pkg=com.google.android.apps.nexuslauncher cmp=com.google.android.apps.nexuslauncher/.NexusLaunc
+herActivity (has extras)} from uid 10137
+12-14 17:26:30.146   504  3580 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.google.android.youtube/.app.honeycomb.Shell$HomeActivity bnds=[440,787][641,1084]}
+from uid 10137
+12-14 17:26:30.898   504   517 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x4000000 cmp=com.google.android.youtube/com.google.android.apps.youtube.app.WatchWhileActivity bnds=[
+440,787][641,1084] (has extras)} from uid 10124
+
+go to Android package n open Android Manifest File n check out this activity element
+<activity>
+    <intent-filter>
+    <action android:name="android.intent.action.MAIN" />
+</activity>
+
+
+ adb -s 'emulator-5554' shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'
+ adb -s emulator-5554 shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'
+ adb -d shell //device
+ FOR /F "skip=1"  %x IN ('adb devices') DO start adb -s %x install -r myandroidapp.apk
+https://www.swtestacademy.com/appium-tutorial/
+
+{
+  "deviceName": "emulator-5554",
+  "platformName": "Android",
+  "automationName": "UiAutomator2",
+  "platformVersion": "11",
+  "skipUnlock": "false"
+}
+ //sdk_gphone_x86 //Pixel 4 API 30
+PS C:\Users\G5> C:\Users\G5\AppData\Local\Android\Sdk\platform-tools\adb.exe shell pm list packages|grep -i "youtube"
+
+C:\Users\G5>adb devices
+List of devices attached
+F8AZFG01C992    device
+emulator-5554   device
