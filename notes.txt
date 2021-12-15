@@ -3,6 +3,8 @@ use cold boot emulators
 add/trust pom as maven project
 add https://repo.maven.apache.org/maven2
 
+https://blog.testproject.io/2018/06/11/ios-test-windows-without-mac/ - testProject POC?
+
  adb -s emulator-5554 logcat|grep -i android.intent.action.MAIN
  12-14 17:26:25.943   504  6135 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000000 pkg=com.google.android.apps.nexuslauncher cmp=com.google.android.apps.nexuslauncher/.NexusLaunc
 herActivity (has extras)} from uid 10137
